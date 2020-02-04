@@ -47,7 +47,7 @@ def log_errors(f):
 def get_address(update: Update, context: CallbackContext, **kwargs):
 
     req = update.message.text
-    req_url = requests.get('https://geocode-maps.yandex.ru/1.x/?format=json&apikey=5ee7f7a0-4e38-4217-a958-5215b17c4fe1&geocode={}'.format('req'))
+    req_url = requests.get('https://geocode-maps.yandex.ru/1.x/?format=json&apikey=5ee7f7a0-4e38-4217-a958-5215b17c4fe1&geocode={}'.format(req))
     addresses = req_url.json()
     data = addresses['response']['GeoObjectCollection']['featureMember']
     for adress_data in data:
